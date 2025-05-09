@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: personal-profile
+  namespace: default
   labels:
     app: personal-profile
 spec:
@@ -19,4 +20,6 @@ spec:
           image: ghcr.io/jhancock1229/personal-profile:latest
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: ghcr-creds  # Optional; required only if GHCR is private or fails unauthenticated pulls
 
