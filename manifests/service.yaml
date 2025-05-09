@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: personal-profile
+spec:
+  selector:
+    app: personal-profile
+  ports:
+  - port: 80
+    targetPort: 80
+
